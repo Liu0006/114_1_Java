@@ -1,18 +1,13 @@
-import com.sun.nio.sctp.PeerAddressChangeNotification;
-
 public class Account {
     private static int accountCount = 0; // 帳戶數量統計
 
     // 帳戶號碼，唯一識別每個帳戶
     private String accountNumber;
     // 帳戶擁有者名稱
-    //private String ownerName;
-    private Person owner;
+    private String ownerName;
     // 帳戶餘額
     private double balance;
 
-    private Date openingDate;
-    private Time2 openingTime;
     /**
      * 建構子，初始化帳戶號碼與初始餘額
      * @param accountNumber 帳戶號碼
@@ -20,19 +15,14 @@ public class Account {
      */
     public Account(String accountNumber, String ownerName, double initialBalance) {
         this.setAccountNumber(accountNumber);
-        this.owner = new Person(ownerName, ownerID);
+        this.ownerName = ownerName;
         try {
             this.setBalance(initialBalance);
         } catch (IllegalArgumentException e) {
             System.out.println("初始餘額錯誤: " + e.getMessage() + "，將餘額設為0");
         }
         accountCount++; // 帳戶數量加1
-        // 記錄開戶日期與時間
-        this.openingDate = new Date(now.getMonthValue(), now.getDayOfMonth(), now.getYear());
-        this.openingTime = new Time2(now.getHour(), now.getMinute(), now.getSecond());
     }
-
-
 
     public Account(String accountNumber, double initialBalance) {
         this(accountNumber, "未知", initialBalance);
@@ -66,10 +56,10 @@ public class Account {
      * 取得帳戶擁有者名稱
      * @return 帳戶擁有者名稱
      */
-    public String Person getOwner() {
-        return owner;
+    public String getOwnerName() {
+        return ownerName;
     }
-       return owner;
+
     /**
      * 設定帳戶餘額
      * @param balance 欲設定的帳戶餘額，必須為正數
@@ -116,8 +106,4 @@ public class Account {
             throw new IllegalArgumentException("提款金額不合法");
         }
     }
-}
-public String toString() {
-    return String.format("帳戶號碼: %s, 持有人: %s, 餘額: %.2f, 開戶日期: %s, 開戶時間: %s",
-            accountNumber, ownerName, balance, openDate.toString(), openTime.toString());
 }

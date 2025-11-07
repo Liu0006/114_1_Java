@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class AccountTest {
     public static void main(String[] args) {
         List<Account> customers = new ArrayList<>(); // 儲存客戶帳戶的List
-        Account acc1 = new Account("A001", "Alice", 5000);
+        Account acc1 = new Account(accountNumber;"A001", ownerName;"Alice", ownerID;"A123456", initialBalance;5000);
         addCustomer(customers, acc1);
         Account acc2 = new Account("A002", "Bob", 3000);
         addCustomer(customers, acc2);
@@ -99,7 +99,7 @@ public class AccountTest {
             System.out.println("無法列印帳戶資訊，帳戶不存在");
             return;
         }
-        System.out.println( account.toString());
+        System.out.println( account.);
 
     }
 
