@@ -17,4 +17,10 @@ public class ShieldSwordMAn extends  SwordsMan{
     public int getDefenseCapacity(){
         return defenseCapacity;
     }
+
+    public void defence() {
+        this.setHealth(this.getHealth() + defenseCapacity);
+        System.out.println(this.getName() + "使用盾牌防禦，恢復" + defenseCapacity + "點生命值 " + this);
+    }
+
 }
