@@ -12,18 +12,9 @@ public  class SwordsMan extends Role{
                 this.getAttackPower() + " 點傷害。" + opponent);
     }
 
-    //展示技能
-    @Override
-    public void showSpecialSkill() {
-        System.out.println("┌─────────────────────────────┐" );
-        System.out.println("│  " + this.getName() + "    的特殊技能           │");
-        System.out.println("├─────────────────────────────┤" );
-        System.out.println("│  技能名稱：連續斬擊            │" );
-        System.out.println("│  技能效果：對敵人進行三次快速攻擊 │" );
-        System.out.println("│   技能效果：造成 150% 傷害     │" );
-        System.out.println("└─────────────────────────────┘" );
 
-    }
+
+
     
 }
 

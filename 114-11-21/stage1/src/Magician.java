@@ -32,3 +32,5 @@ public class Magician extends Role{
         return super.toString() + ", 治癒力: " + healPower;
     }
 }
+
+
